@@ -1,0 +1,17 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.art {
+  transition: transform .2s;
+  width: 100%;
+}
+
+.art:hover {
+  -webkit-transform: scale(2.0);
+  transform: scale(2.0);
+  transform-origin: top right;
+}
