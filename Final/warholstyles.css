@@ -6,12 +6,63 @@ body {
 }
 
 .art {
-  transition: transform .2s;
   width: 100%;
+  z-index: -1;
 }
 
-.art:hover {
-  -webkit-transform: scale(2.0);
-  transform: scale(2.0);
+@keyframes big {
+  100% {transform: scale(2.4);}
+}
+
+.frame {
+  animation-name: big;
+  animation-duration: 0.3s;
+  animation-play-state: paused;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  transition-timing-function: ease-in;
   transform-origin: top right;
+}
+
+.face {
+  z-index: 1;
+  position: absolute;
+  top: 6.7%;
+  right: 22.5%;
+  width: 10%;
+}
+
+.puddle {
+  z-index: 1;
+  position: absolute;
+  bottom: 16.4%;
+  right: 21%;
+  width: 10%;
+  mix-blend-mode: soft-light;
+  display: none;
+}
+
+.puddle2 {
+  z-index: 1;
+  position: absolute;
+  bottom: 16.4%;
+  left: 21%;
+  width: 10%;
+  mix-blend-mode: color;
+  display: none;
+}
+
+@keyframes fall {
+  100 % {animation: yAxis 2.0s cubic-bezier(0.02, 0.01, 0.21, 1);}
+}
+
+.tear {
+  z-index: 1;
+  position: absolute;
+  top: 12.5%;
+  right: 25.7%;
+  width: 3%;
+  mix-blend-mode: hard-light;
+  animation-name: fall;
+  /* display: none; */
 }
