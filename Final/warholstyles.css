@@ -27,7 +27,7 @@ body {
 .face {
   z-index: 1;
   position: absolute;
-  top: 6.7%;
+  top: 8.5%;
   right: 22.5%;
   width: 10%;
 }
@@ -35,11 +35,11 @@ body {
 .puddle {
   z-index: 1;
   position: absolute;
-  bottom: 16.4%;
+  bottom: 17%;
   right: 21%;
   width: 10%;
   mix-blend-mode: soft-light;
-  display: none;
+  transform: rotateX(30deg) rotateZ(-3deg);
 }
 
 .puddle2 {
@@ -49,20 +49,31 @@ body {
   left: 21%;
   width: 10%;
   mix-blend-mode: color;
-  display: none;
 }
 
-@keyframes fall {
-  100 % {animation: yAxis 2.0s cubic-bezier(0.02, 0.01, 0.21, 1);}
+ @keyframes fall {
+   0.0000% {transform: translate(96.0px, -3.0px) ; }
+   4.8848% {transform: translate(101.8px, 6.9px) ; }
+   15.5632% {transform: translate(108.9px, 31.1px) ; }
+   28.5147% {transform: translate(113.2px, 61.3px) ; }
+   57.7104% {transform: translate(119.3px, 129.8px) ; }
+   71.9605% {transform: translate(124.0px, 163.0px) ; }
+   84.7765% {transform: translate(131.7px, 192.2px) ; }
+   90.4800% {transform: translate(137.2px, 204.5px) ; }
+   95.7134% { transform: translate(143.9px, 214.8px) ; }
+   100.0000% {transform: translate(151.0px, 222.0px) ;
+              opacity: 0;}
 }
 
 .tear {
   z-index: 1;
   position: absolute;
-  top: 12.5%;
-  right: 25.7%;
-  width: 3%;
+  top: 16.2%;
+  right: 31.8%;
+  width: 3.8%;
   mix-blend-mode: hard-light;
   animation-name: fall;
-  /* display: none; */
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  display: none;
 }

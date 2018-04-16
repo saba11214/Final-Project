@@ -13,7 +13,6 @@
       <img class="art" src="images/warhol.jpg" >
       <img class="face" src="images/monroe.jpg" >
       <img class="tear" src="images/tear.png" >
-      <img class="tear2" src="images/tear2.png" >
     </div>
 
 
@@ -25,15 +24,18 @@
       var frame = document.querySelector('.frame');
       var puddle = document.querySelector('.puddle');
       var puddle2 = document.querySelector('.puddle2');
+      var tear = document.querySelector('.tear');
       var clicked = 2;
 
       function start() {
         if (clicked%2 == 0) {
-          frame.style.animationPlayState = 'running';}
+          frame.style.WebkitTransform = 'scale(2.1)';
+          clicked += 1
+          // tear.style.animationPlayState = 'running';
+          }
         else {
-          frame.style.animationDirection = 'reverse';
-          puddle.style.display = 'flex';
-          puddle2.style.display = 'flex';
+          frame.style.WebkitTransform = 'scale(1)';
+          clicked += 1
         }
       }
 
