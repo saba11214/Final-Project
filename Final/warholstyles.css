@@ -1,79 +1,64 @@
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  background: url(images/soupalternative.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.art {
-  width: 100%;
-  z-index: -1;
-}
-
-@keyframes big {
-  100% {transform: scale(2.4);}
-}
-
-.frame {
-  animation-name: big;
-  animation-duration: 0.3s;
-  animation-play-state: paused;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  transition-timing-function: ease-in;
-  transform-origin: top right;
-}
-
-.face {
-  z-index: 1;
+.soup1 {
   position: absolute;
-  top: 8.5%;
-  right: 22.5%;
+  width: 14%;
+  top: 245px;
+  left: 220px;
+}
+
+.soup2 {
+  position: absolute;
+  width: 13.5%;
+  top: 246px;
+  left: 500px;
+}
+
+/* .soup3 {
+  position: absolute;
+  width: 10%;
+  height: 27%;
+  top: 340px;
+  left: 640px;
+} */
+
+.soup4 {
+  position: absolute;
+  width: 14%;
+  height: 37%;
+  top: 243px;
+  left: 760px;
+}
+
+.soup5 {
+  position: absolute;
+  width: 14%;
+  height: 37%;
+  top: 243px;
+  right: 300px;
+}
+
+.video {
+  position: absolute;
+  right: 0;
   width: 10%;
 }
 
-.puddle {
-  z-index: 1;
+.bowl {
   position: absolute;
-  bottom: 17%;
-  right: 21%;
+  right: 0;
+  bottom: 0;
   width: 10%;
-  mix-blend-mode: soft-light;
-  transform: rotateX(30deg) rotateZ(-3deg);
-}
-
-.puddle2 {
-  z-index: 1;
-  position: absolute;
-  bottom: 16.4%;
-  left: 21%;
-  width: 10%;
-  mix-blend-mode: color;
-}
-
- @keyframes fall {
-   0.0000% {transform: translate(96.0px, -3.0px) ; }
-   4.8848% {transform: translate(101.8px, 6.9px) ; }
-   15.5632% {transform: translate(108.9px, 31.1px) ; }
-   28.5147% {transform: translate(113.2px, 61.3px) ; }
-   57.7104% {transform: translate(119.3px, 129.8px) ; }
-   71.9605% {transform: translate(124.0px, 163.0px) ; }
-   84.7765% {transform: translate(131.7px, 192.2px) ; }
-   90.4800% {transform: translate(137.2px, 204.5px) ; }
-   95.7134% { transform: translate(143.9px, 214.8px) ; }
-   100.0000% {transform: translate(151.0px, 222.0px) ;
-              opacity: 0;}
-}
-
-.tear {
-  z-index: 1;
-  position: absolute;
-  top: 16.2%;
-  right: 31.8%;
-  width: 3.8%;
-  mix-blend-mode: hard-light;
-  animation-name: fall;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  display: none;
 }

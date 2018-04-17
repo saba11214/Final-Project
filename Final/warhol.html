@@ -5,42 +5,19 @@
     <meta charset="utf-8">
      <title>Warhol</title> <!-- Modern Pop -->
     <link rel="stylesheet" href="warholstyles.css">
-    <link rel="icon" href="images/faviconw.ico">
+    <link rel="icon" href="images/favicon.ico">
   </head>
 
   <body>
-    <div class="frame">
-      <img class="art" src="images/warhol.jpg" >
-      <img class="face" src="images/monroe.jpg" >
-      <img class="tear" src="images/tear.png" >
-    </div>
+    <img class="soup1" src="images/soup1.png">
+    <img class="soup2" src="images/soup2.png">
+    <!-- <img class="soup3" src="images/soup3.png"> -->
+    <img class="soup4" src="images/soup4.png">
+    <img class="soup5" src="images/soup5.png">
 
+    <video class="video" src="images/wine.mp4" autoplay></video>
 
-    <img class="puddle" src="images/puddle.png" >
-    <img class="puddle2" src="images/puddle2.png" >
-
-    <script>
-      var face = document.querySelector('.face');
-      var frame = document.querySelector('.frame');
-      var puddle = document.querySelector('.puddle');
-      var puddle2 = document.querySelector('.puddle2');
-      var tear = document.querySelector('.tear');
-      var clicked = 2;
-
-      function start() {
-        if (clicked%2 == 0) {
-          frame.style.WebkitTransform = 'scale(2.1)';
-          clicked += 1
-          // tear.style.animationPlayState = 'running';
-          }
-        else {
-          frame.style.WebkitTransform = 'scale(1)';
-          clicked += 1
-        }
-      }
-
-      face.addEventListener('click', start);
-    </script>
+    <img class="bowl" src="images/bowl.jpg">
 
   </body>
  </html>
