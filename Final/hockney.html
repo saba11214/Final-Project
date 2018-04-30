@@ -49,12 +49,16 @@
       var referenceWidth = 660;
       var referenceHeight = 288;
 
+      var x = Math.floor(Math.random()*255);
+      var y = Math.floor(Math.random()*255);
+      var z = Math.floor(Math.random()*255);
+      var fps = 30;
+
       function setup() {
         canvas.style.width = referenceWidth + 'px';
         canvas.style.height = referenceHeight + 'px';
 
         var scale = window.devicePixelRatio;
-        console.log(scale);
         canvas.width = referenceWidth * scale;
         canvas.height = referenceHeight * scale;
 
@@ -63,25 +67,40 @@
         draw();}
 
       function draw() {
-        var img = new Image();
-        img.src = 'images/hockney.jpg';
 
-        img.addEventListener('load', function() {
-          context.drawImage(img, 0, 0, referenceWidth, referenceHeight);
+          var img = new Image();
+          img.src = 'images/hockney.jpg';
 
-        });
+          img.addEventListener('load', function() {
+            setTimeout (function () {
+            context.drawImage(img, 0, 0, referenceWidth, referenceHeight);
+
+            context.save();
+            context.globalCompositeOperation = 'exclusion';
+            rectangle();
+            context.restore();
+            requestAnimationFrame(draw);
+          }, 11000 / fps);
+          });
+          x = Math.floor(Math.random()*255);
+          y = Math.floor(Math.random()*255);
+          z = Math.floor(Math.random()*255);
       }
 
+      function rectangle() {
+        var x = Math.floor(Math.random()*255);
+        var y = Math.floor(Math.random()*255);
+        var z = Math.floor(Math.random()*255);
 
-      // function drawTriangle() {
-      //   context.beginPath();
-      //   context.moveTo(225, 50);
-      //   context.lineTo(100, 250);
-      //   context.lineTo(350, 250);
-      //   context.closePath();
-      //   context.fillStyle = 'rgb(0, 100, 255)';
-      //   context.fill();
-      // }
+        context.beginPath();
+        context.moveTo(0, 148);
+        context.lineTo(435, 148);
+        context.lineTo(495, 288);
+        context.lineTo(0, 288);
+        context.closePath();
+        context.fillStyle = 'rgb(' + z + ',' +  x + ', ' + y + ' , 0.5)';
+        context.fill();
+      }
 
       window.addEventListener('load', setup);
     </script>
