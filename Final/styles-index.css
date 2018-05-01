@@ -1,0 +1,58 @@
+body {
+  padding: 0;
+  margin: 0;
+
+}
+img {
+  position: absolute;
+  z-index: 10;
+}
+.hockney {
+  width: 35%;
+  height: 32%;
+  top: 450px;
+  left: 500px;
+  transform: perspective(800px) rotateY(2deg) skewX(1deg);
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+}
+.roy {
+  width: 16%;
+  height: 32%;
+  top: 494px;
+  right: 100px;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+.picture {
+  width: 30%;
+  height: 47%;
+  top: 435px;
+  left: 20px;
+  transform: perspective(800px) rotateX(2deg) rotateY(48deg) rotateZ(-3deg);
+  animation-name: fade;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes grow {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.005);}
+  75% {transform: scale(1);}
+  90% {transform: scale(0.995);}
+  100% {transform: scale(1);}
+}
+
+@keyframes fade {
+  0% {opacity: 1;}
+  50% {opacity: 0.91;}
+  75% {opacity: 1;}
+  90% {opacity: 0.91;}
+  100% {opacity: 1;}
+}

@@ -1,0 +1,24 @@
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 100%;
+  margin: auto;
+  overflow: auto;
+}
+#container {
+  width: 452px;
+  height: 100%;
+  margin: auto;
+}
+
+canvas {
+  /* border: 1px solid black; */
+  position: absolute;
+  top: 50%;
+  margin-top: -190px;
+  margin-left: -105px;
+}

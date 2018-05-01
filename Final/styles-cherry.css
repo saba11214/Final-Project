@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.spoon {
+  width: 100%;
+  position: absolute;
+}
+.rainbow {
+  z-index: 10;
+  position: absolute;
+  top: 70px;
+  left: 420px;
+  transform: scaleX(2) scaleY(1.2);
+  opacity: 0;
+  animation-name: rainbow;
+  animation-duration: 6s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+}
+.water {
+  z-index: 10;
+  position: absolute;
+  top: 30px;
+  left: 880px;
+  opacity: 0;
+  transform: rotate(20deg);
+  animation-name: rain;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+@keyframes rain {
+  0% {opacity: 0;}
+  20% {opacity: 0.2;}
+  40% {opacity: 0.4;}
+  60% {opacity: 0.6;}
+  80% {opacity: 0.8;}
+  100% {opacity: 1; mix-blend-mode: color-dodge;}
+}
+@keyframes rainbow {
+  0% {opacity: 0;}
+  33% {opacity: 0.3;}
+  66% {opacity: 0.6;}
+  100% {opacity: 1;}
+}

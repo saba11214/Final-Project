@@ -66,7 +66,7 @@ var container = document.getElementById('pool');
     var height = window.innerHeight;
 
     camera = new THREE.PerspectiveCamera(45, width/height, 1, 20000);
-    camera.position.set(0, 200, 700); 
+    camera.position.set(0, 200, 700);
     scene.add(camera);
 
     var light = new THREE.DirectionalLight(0xffffff, 1);
@@ -75,7 +75,7 @@ var container = document.getElementById('pool');
 
     var material = new THREE.MeshNormalMaterial({side: THREE.DoubleSide});
     var loader = new THREE.BufferGeometryLoader();
-    loader.load('images/pool-top.json', function(geometry) {
+    loader.load('models/pool-top.json', function(geometry) {
 
       mesh = new THREE.Mesh(geometry, material);
       mesh.scale.set(50, 50, 50);
@@ -89,7 +89,7 @@ var container = document.getElementById('pool');
 
     var material2 = new THREE.MeshNormalMaterial({ side: THREE.DoubleSide});
     var loader2 = new THREE.BufferGeometryLoader();
-    loader2.load('images/pool.json', function(geometry2) {
+    loader2.load('models/pool.json', function(geometry2) {
 
       mesh2 = new THREE.Mesh(geometry2, material2);
       mesh2.scale.set(50, 50, 50);
@@ -97,7 +97,6 @@ var container = document.getElementById('pool');
       mesh2.position.x = -480;
       mesh2.position.z = -35;
       scene.add(mesh2);
-
     });
 
     renderer = new THREE.WebGLRenderer({alpha: 1, antialias: true});

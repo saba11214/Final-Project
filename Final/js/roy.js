@@ -1,6 +1,10 @@
-var camera, scene, renderer, controls, mesha, mesh2;
+var camera, scene, renderer, controls, mesh1, mesh2, counter, light;
+
+var counter = 0;
 
 function init() {
+  var fps = 30;
+
   scene = new THREE.Scene();
   var width = window.innerWidth;
   var height = window.innerHeight;
@@ -9,13 +13,12 @@ function init() {
   camera.position.set(0, 600, 3200);
   scene.add(camera);
 
-  var light = new THREE.DirectionalLight(0xffffff, 1);
+  light = new THREE.DirectionalLight(0xffff00, 1);
   light.position.set(1, 1, 1);
   scene.add(light);
 
   var spotlight = new THREE.SpotLight(0xffffff, 0.8, 2000);
   spotlight.position.set(1000, 500, 500);
-  spotlight.castShadow = true;
 
   var path = 'images/';
   var format = '.jpg';
@@ -31,7 +34,7 @@ function init() {
 
   var loader = new THREE.BufferGeometryLoader();
 
-  loader.load('images/seat.json', function(geometry1) {
+  loader.load('models/seat.json', function(geometry1) {
 
     mesh1 = new THREE.Mesh(geometry1, material1);
     mesh1.scale.set(900, 900, 900);
@@ -41,7 +44,7 @@ function init() {
     scene.add(mesh1);});
 
     var material2 = new THREE.MeshBasicMaterial({color: 0x737373, envMap: scene.background, side: THREE.DoubleSide});
-    loader.load('images/square.json', function(geometry2) {
+    loader.load('models/square.json', function(geometry2) {
 
       var model = new THREE.Mesh(geometry2, material2);
       model.scale.set(400, 400, 400);
@@ -51,7 +54,7 @@ function init() {
       scene.add(model);});
 
       var material3 = new THREE.MeshStandardMaterial({color: 0xff4d4d, envMap: scene.background, side: THREE.DoubleSide});
-      loader.load('images/couch.json', function(geometry3) {
+      loader.load('models/couch.json', function(geometry3) {
 
         var model2 = new THREE.Mesh(geometry3, material3);
         model2.scale.set(2500, 1000, 900);
@@ -62,7 +65,7 @@ function init() {
         scene.add(model2);});
 
         var material4 = new THREE.MeshStandardMaterial({color: 0x9D6CE7, envMap: scene.background, side: THREE.DoubleSide});
-        loader.load('images/lamp.json', function(geometry4) {
+        loader.load('models/lamp.json', function(geometry4) {
 
           var model4 = new THREE.Mesh(geometry4, material4);
           model4.scale.set(250, 250, 300);
@@ -72,7 +75,7 @@ function init() {
           scene.add(model4);});
 
           var material5 = new THREE.MeshStandardMaterial({color: 0xF1F7C5, envMap: scene.background, side: THREE.DoubleSide});
-          loader.load('images/stand.json', function(geometry5) {
+          loader.load('models/stand.json', function(geometry5) {
 
             var model5 = new THREE.Mesh(geometry5, material5);
             model5.scale.set(300, 300, 300);
@@ -82,7 +85,7 @@ function init() {
             scene.add(model5);});
 
             var material6 = new THREE.MeshStandardMaterial({color: 0xF1F7C5, envMap: scene.background, side: THREE.DoubleSide});
-            loader.load('images/table.json', function(geometry6) {
+            loader.load('models/table.json', function(geometry6) {
 
               var model6 = new THREE.Mesh(geometry6, material6);
               model6.scale.set(15, 15, 15);
@@ -93,7 +96,7 @@ function init() {
               scene.add(model6);});
 
               var material7 = new THREE.MeshStandardMaterial({color: 0xF1F7C5, envMap: scene.background, side: THREE.DoubleSide});
-              loader.load('images/sticks.json', function(geometry7) {
+              loader.load('models/sticks.json', function(geometry7) {
 
                 var model7 = new THREE.Mesh(geometry7, material7);
                 model7.scale.set(30, 30, 30);
@@ -102,7 +105,7 @@ function init() {
                 model7.position.y = -7000;
                 scene.add(model7);});
 
-                loader.load('images/sticks.json', function(geometry7) {
+                loader.load('models/sticks.json', function(geometry7) {
 
                 var model8 = new THREE.Mesh(geometry7, material7);
                 model8.scale.set(30, 30, 30);
@@ -113,7 +116,7 @@ function init() {
                 scene.add(model8);});
 
                 var material9 = new THREE.MeshStandardMaterial({color: 0xffe4c4, envMap: scene.background, side: THREE.DoubleSide});
-                loader.load('images/tv.json', function(geometry9) {
+                loader.load('models/tv.json', function(geometry9) {
 
                   var model9 = new THREE.Mesh(geometry9, material9);
                   model9.scale.set(300, 300, 300);
@@ -124,7 +127,7 @@ function init() {
                   scene.add(model9);});
 
                   var material10 = new THREE.MeshStandardMaterial({color: 0xb35900, envMap: scene.background, side: THREE.DoubleSide});
-                  loader.load('images/pot.json', function(geometry10) {
+                  loader.load('models/pot.json', function(geometry10) {
 
                     var model10 = new THREE.Mesh(geometry10, material10);
                     model10.scale.set(320, 320, 320);
@@ -134,7 +137,7 @@ function init() {
                     scene.add(model10);});
 
                     var material11 = new THREE.MeshStandardMaterial({color: 0x800000, envMap: scene.background, side: THREE.DoubleSide});
-                    loader.load('images/pot2.json', function(geometry11) {
+                    loader.load('models/pot2.json', function(geometry11) {
 
                       var model11 = new THREE.Mesh(geometry11, material11);
                       model11.scale.set(320, 320, 320);
@@ -144,7 +147,7 @@ function init() {
                       scene.add(model11);});
 
                       var material12 = new THREE.MeshStandardMaterial({color: 0x00cc00, envMap: scene.background, side: THREE.DoubleSide});
-                      loader.load('images/plant.json', function(geometry12) {
+                      loader.load('models/plant.json', function(geometry12) {
 
                         var model12 = new THREE.Mesh(geometry12, material12);
                         model12.scale.set(320, 320, 320);
@@ -163,6 +166,22 @@ function init() {
 
 function animate() {
   requestAnimationFrame(animate);
+  counter += 1;
+
+    if ((counter % 80) == 0) {
+      light.color.set(0xb3d1ff); //blue
+    } else if ((counter % 90) == 0) {
+      light.color.set(0xffcccc); //peach
+    } else if ((counter % 100) == 0) {
+      light.color.set(0xddff99); //lime
+    }
+      else if ((counter % 110) == 0) {
+      light.color.set(0xffccee); //pink
+    }
+      else if ((counter % 120) == 0) {
+      light.color.set(0xffffff); //white
+    }
+
   renderer.render(scene, camera);
   controls.update();
 }
