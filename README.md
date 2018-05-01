@@ -1,6 +1,8 @@
 # Final-Project
 Final Project For Drawing On The Web
 
+http://i6.cims.nyu.edu/~sa3806/drawing/final/
+
 For the project I was inspired by the art history class I am currently taking, and we are mostly focusing on pop art. And all of the artists and paintings we've studied really tie into this class, in terms of the dynamic colors, and animation potential. In lectures, we aren't just learning about the features of the art, but their history; the main thing lacking in the artworks themselves is that history and significance behind them. That's what I want to do with this project, to add a life (make them alive in some sense) or significance back to the art that people might not realize when just looking at the art. I want to play with perspective, and have the user look at the art and the web page differently, not necessarily how we normally do.
 
 The cover page I made a gallery with the three art works I am planning on manipulating. The two paintings will be regular paintings on the wall, but the sculpture will be seen through a window. I wanted to make them alive, so I made them breathe in a sense. The paintings I made them change in scale, up and down. The window I made it change opacity slightly, like if you were looking out of a window with the sun varying at different angles. All three link their respective web pages.
